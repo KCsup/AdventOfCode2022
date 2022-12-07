@@ -1,5 +1,5 @@
 cabal-version:      2.4
-name:               day2
+name:               days23
 version:            0.1.0.0
 
 -- A short (one-line) description of the package.
@@ -21,19 +21,7 @@ maintainer:         kcsup05@gmail.com
 -- category:
 extra-source-files: CHANGELOG.md
 
-library
-    exposed-modules:  MyLib
-
-    -- Modules included in this library but not exported.
-    -- other-modules:
-
-    -- LANGUAGE extensions used by modules in this package.
-    -- other-extensions:
-    build-depends:    base ^>=4.16.4.0
-    hs-source-dirs:   src
-    default-language: Haskell2010
-
-executable day2
+executable days23
     main-is:          Main.hs
 
     -- Modules included in this executable, other than Main.
@@ -41,9 +29,6 @@ executable day2
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
-    build-depends:
-        base ^>=4.16.4.0,
-        day2
-
+    build-depends:    base ^>=4.16.4.0
     hs-source-dirs:   app
     default-language: Haskell2010
