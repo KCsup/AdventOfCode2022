@@ -14,3 +14,4 @@ This year I'm going to be switching the language used every few days. Here's the
 22-24: Obj-C
 25: Holy C
 ```
+I'm doing this challenge alongside @pantaelaman and @Bagel03
