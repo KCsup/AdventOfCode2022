@@ -1,4 +1,5 @@
 package org.kcsup.aoc
+package day4
 
 import scala.io.Source
 
