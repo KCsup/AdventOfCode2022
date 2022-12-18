@@ -3,21 +3,28 @@ package day7
 fun main() {
     val lines =  java.io.File(System.getProperty("user.dir") + "/src/main/kotlin/day7/day7input.txt").readLines()
     val root = Folder("root")
+    var testArray = emptyArray<String>()
+    testArray.forEach { println(it) }
+    testArray += "eeee"
+    testArray.forEach { println(it) }
 
+    var currentOut: Array<String> = emptyArray()
     var currentDir = "root"
-    val test = File("Test", 8)
-    val testFolder = Folder("amogus")
-    testFolder.addFile(test)
-    root.addFile(testFolder)
-    root.addFile(File("AnotherTest", 23))
-    var next = root.getSubFile("amogus")
-    if(next is Folder) next.addFile()
-
-    println("Root Size: ${getFolderSize(root)}")
-
-    println(findFile(test, root))
     for(line in lines) {
+        val lineArgs = line.split(" ")
+        if(lineArgs[0] == "$") {
+            when(lineArgs[1]) {
+                "ls" -> {
+                    if(currentOut.isNotEmpty()) parseListCommand(currentOut)
+                    currentOut = emptyArray()
+                }
+                "cd" -> {
 
+                }
+            }
+        }
+
+        currentOut += line
     }
 }
 
@@ -79,7 +86,7 @@ class Folder(override val name: String, val subFiles: MutableList<File>) : File(
     constructor(name: String) : this(name, mutableListOf())
     fun addFile(file: File) = subFiles.add(file)
 
-    fun getSubFile(path: String) {
-        subFiles.find { it.name == path }
+    fun getSubFile(path: String): File? {
+        return subFiles.find { it.name == path }
     }
 }
